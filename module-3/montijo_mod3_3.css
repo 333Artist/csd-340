@@ -1,0 +1,155 @@
+html, body {
+
+    font-size:16px;
+}
+
+/*I'm not ever sure if I should delete the old assignment code*/
+h1,h2,h3,h4 {
+    font-weight:700;
+    text-transform: uppercase;
+    text-align: center;
+
+    background-color: black;
+    color : white;
+    border : 1px;
+    padding : 10px;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+
+h2 {
+
+    font-weight:500;
+    text-align: left;
+    padding-top:15px;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+
+p {
+    font-weight: 400;
+    line-height: 1.4em;
+
+}
+
+.sentence {
+    font-style:italic;
+
+}
+
+.intro {
+    text-indent:2em;
+
+}
+
+.my-link:visited {
+    color:blue;
+}
+
+address {
+    text-align: center;
+
+}
+
+
+#anchor {
+    color : gray;
+    text-decoration: none;
+
+
+}
+
+#anchor:hover {
+    color : white;
+}
+
+#anchor:visited {
+    color : blue;
+}
+
+.my-link:hover {
+    text-decoration: underline;
+    background-color:#D6A800;
+}
+
+
+
+.my-link {
+    font-size:1.25em;
+    font-weight: bold;
+    color:#4F3674;
+    text-decoration:none;
+}
+
+
+.container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.left-box, .right-box {
+    width: 45%;
+}
+
+
+
+ol, ul {
+    font-weight: 300;
+}
+
+
+.left-box {
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 10px;
+}
+.left-box ol {
+    list-style-position: inside;
+}
+
+
+.right-box {
+    border: 1px dashed red;
+    border-radius: 15px;
+    padding: 10px;
+}
+.right-box ul {
+    list-style: upper-roman inside;
+}
+
+
+.bottom-box {
+    width: 100%;
+    margin-top: 60%;
+    margin-bottom: 20px;
+    /* Clearfix or block behavior to ensure float works cleanly */
+    display: inline-block; 
+}
+
+
+.bottom-box a {
+    float: right;
+    text-decoration: none; /* Removes default underline until hover */
+}
+
+
+.bottom-box a:hover {
+    text-decoration: underline;
+}
