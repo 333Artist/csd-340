@@ -1,0 +1,119 @@
+html, body {
+
+    font-size:16px;
+}
+
+h1 {
+    text-align: center;
+    color: rgba(44, 62, 80, 1.0);
+}
+
+h3 {
+    text-align: center;
+    color: rgba(90, 62, 80, 1.0);
+}
+
+#container {
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+
+  
+
+}
+
+#img-gallery{      
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 10%;
+    border:1px solid black;
+
+    
+
+}
+
+.gallery-item {
+  border:1px solid black;
+  padding: 10px;
+   
+}
+
+figure {
+    text-align: center;
+    margin: 0;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto; /* Centers image and adds bottom spacing */
+}
+
+
+
+
+figcaption {
+    font-style: italic;
+    font-size: 0.75em;
+    color: rgba(127, 140, 141, 1.0); /* Muted Gray */
+}
+
+
+
+.bottom-box {
+    width: 100%;
+    margin-top: 60%;
+    margin-bottom: 20px;
+    display: inline-block; 
+}
+
+
+.bottom-box a {
+    float: right;
+    text-decoration: none;
+}
+
+.bottom-box a:hover {
+    text-decoration: underline;
+}
+
+
+.my-link:visited {
+    color:blue;
+}
+
+address {
+    text-align: center;
+}
+
+
+#anchor {
+    color : gray;
+    text-decoration: none;
+}
+
+#anchor:hover {
+    color : white;
+}
+
+#anchor:visited {
+    color : blue;
+}
+
+.my-link:hover {
+    text-decoration: underline;
+    background-color:#D6A800;
+}
+
+
+
+.my-link {
+    font-size:1.25em;
+    font-weight: bold;
+    color:#4F3674;
+    text-decoration:none;
+}
