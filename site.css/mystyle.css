@@ -25,15 +25,15 @@
   
   --white: #ffffff;
   --shadow: #7040a0;
-  --nav-top: #2bc6d7;
-  --nav-bot: #251ca3;
+  --nav-top: #5745a7;
+  --nav-bot: #571682;
 }
 /* ======== PANELS ======== */
 .panel {
-     background-color:white !important;
+      background-color:#b3a5e9;
      border:2px solid var(--border);
      border-radius:8px;
-     box-shadow:3px 3px 0 var(--shadow),inset 0 1px 0 rgba(255,255,255,.7);
+     box-shadow:3px 3px 0 var(--shadow),inset 0 1px 0 #ffffffb3;
      overflow:hidden; }
 
 .panel-header { 
@@ -80,12 +80,13 @@
 html {
   font-family: 'Courier New', monospace;
   font-size: 16px;
-  background-color:var(--nav-top); 
+  
+  background:linear-gradient(180deg,#705fac 50%,#1d1c3c  100%);
   background-size: 80px;
 }
 
 body {
-    background-color:var(--nav-top); 
+    
     margin: 0;
     padding: 0;
 }
@@ -99,8 +100,8 @@ h1,h2,h3,h4 {
     padding: 10px;
     font-family:'Press Start 2P',monospace;
     font-size:20px;
-    color:var(--border2);
-    text-shadow:1px 1px 0 rgba(0,0,0,.3);
+    color:#d3d5f1;
+    text-shadow: -2px 0 blue, 1px 0 red;
     flex:1;
 
 }
@@ -159,16 +160,25 @@ address {
 }
 
 .main-content {
-  flex: 3;             /* Takes up 3 parts of the available space (~75%) */
+  flex: 2;             /* Takes up 3 parts of the available space (~75%) */
 }
-
-
-.sidebar {
+.column-1 {
   flex: 1;             /* Takes up 1 part of the available space (~25%) */
-  background-color: var(--nav-bot);
-  padding: 15px;
+  padding: 0px;
 }
 
+.img-box {
+  flex:3;
+
+}
+
+.column-2 {
+  flex: 2;             /* Takes up 1 part of the available space (~25%) */
+  background-color: var(--nav-bot);
+ 
+}
+
+  
 .blinkie-box {
   display: flex;       /* Aligns them in a row */
   flex-wrap: wrap;     /* Allows them to wrap to the next line if there's too many */
