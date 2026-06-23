@@ -1,50 +1,67 @@
+//Looks for div elements from the html document
 const box = document.getElementById('myBox');
 const closeBtn = document.getElementById('closeBtn');
 const minimizedIcon = document.getElementById('minimizedIcon');
 
-let isDragging = false;
-let startX, startY;
-let initialX, initialY;
-let dragThreshold = 5;
+// --- REUSABLE DRAG LOGIC ---
+//Some basic physics here
+function makeElementMoveable(element, isMainBox = false) {
+    //Would this be a default constructor? But it passes arguments?
+    let isDragging = false;
+    let startX, startY;
+    let initialX, initialY;
+    let dragThreshold = 5;
 
-// --- DRAG & CLICK LOGIC FOR THE BOX ---
-box.addEventListener('mousedown', (e) => {
-    // If they clicked the close button, don't start a drag
-    if (e.target === closeBtn) return;
+    //once mousedown client events starts changing the default variables
+    element.addEventListener('mousedown', (e) => {
+        // If they clicked the close button inside the box, don't drag
+        if (e.target === closeBtn) return;
 
-    isDragging = false;
-    startX = e.clientX;
-    startY = e.clientY;
-    initialX = box.offsetLeft;
-    initialY = box.offsetTop;
+        isDragging = false;
+        startX = e.clientX;
+        startY = e.clientY;
+        initialX = element.offsetLeft;
+        initialY = element.offsetTop;
 
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
-});
+        // Use a persistent object to pass variables to the window-level listeners
+        const onMouseMove = (moveEvent) => {
+            const deltaX = moveEvent.clientX - startX;
+            const deltaY = moveEvent.clientY - startY;
 
-function onMouseMove(e) {
-    const deltaX = e.clientX - startX;
-    const deltaY = e.clientY - startY;
+            if (Math.abs(deltaX) > dragThreshold || Math.abs(deltaY) > dragThreshold) {
+                isDragging = true;
+            }
 
-    if (Math.abs(deltaX) > dragThreshold || Math.abs(deltaY) > dragThreshold) {
-        isDragging = true;
-    }
+            if (isDragging) {
+                element.style.left = `${initialX + deltaX}px`;
+                element.style.top = `${initialY + deltaY}px`;
+            }
+        };
 
-    if (isDragging) {
-        box.style.left = `${initialX + deltaX}px`;
-        box.style.top = `${initialY + deltaY}px`;
-    }
+        const onMouseUp = (upEvent) => {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+
+            // If it wasn't a drag, handle the click action
+            if (!isDragging && upEvent.target !== closeBtn) {
+                if (isMainBox) {
+                    boxClickAction();
+                } else {
+                    restoreBox();
+                }
+            }
+        };
+
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+    });
 }
 
-function onMouseUp(e) {
-    document.removeEventListener('mousemove', onMouseMove);
-    document.removeEventListener('mouseup', onMouseUp);
+// Make BOTH elements moveable
+makeElementMoveable(box, true);        // Passed true because it's the main box
+makeElementMoveable(minimizedIcon, false); // Passed false because it's the icon
 
-    if (!isDragging && e.target !== closeBtn) {
-        boxClickAction();
-    }
-}
-
+// --- CLICK ACTION FOR MAIN BOX ---
 function boxClickAction() {
     console.log("Box body clicked!");
 }
@@ -64,13 +81,16 @@ closeBtn.addEventListener('click', (e) => {
     minimizedIcon.style.display = 'flex';
 });
 
-// Click the icon to restore
-minimizedIcon.addEventListener('click', () => {
-    // Pass the icon's current location back to the box (in case you make the icon moveable later)
+// Separate function to restore the box (triggered inside makeElementMoveable on click)
+function restoreBox() {
+    // Pass the icon's current location back to the box
     box.style.left = `${minimizedIcon.offsetLeft}px`;
     box.style.top = `${minimizedIcon.offsetTop}px`;
 
     // Toggle visibility
     minimizedIcon.style.display = 'none';
     box.style.display = 'block';
-});
+}
+
+//There's still a lot to learn
+//
