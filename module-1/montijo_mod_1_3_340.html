@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <link rel="icon" href="../site.css/assets/1up.gif">
-     <link rel="stylesheet" href="../site.css/mystyle.css">
+    <link rel="icon" href="../site.css/assets/1up.gif">
+    <link rel="stylesheet" href="../site.css/mystyle.css">
     <title>CSD 340 Web Development with HTML and CSS</title>
 
     <meta charset="UTF-8">
-   
+
     <meta name="description" content="a webpage on web development">
     <meta name="author" content="Maddison Montijo">
     <meta name="robots" content="nofollow">
     <meta name="pragma" content="no-cache">
     <meta name="expires" content="Fri, 02 Jul 2026 23:59:59 GMT">
 </head>
- 
+
 <body>
     <header class="site-header">
         <nav>
@@ -24,22 +25,40 @@
         </nav>
     </header>
     <div id="container" class="page-layout"></div>
-
+    
     <h1>Assignment 1.3 Building a Web Page Exercise - Part 1</h1>
-        <p class="panel">Today's weather in Texas is 82℉ and Cloudy. </p>
-          <div class="bottom-box">
-            <a href="../index.html">Back to Landing Page</a>
-        </div>
-        
+
     </div>
 
-    <div id="myBox">
-  <div id="myBoxHeader">Click & Drag Me</div>
-  <p>Move me anywhere!</p>
-</div>
+    <div id="myBox" class="panel">
+        <span id="closeBtn" title="Minimize">&times;</span>
+        <div class="box-content">
+            <div class="panel-header">
+                <span class="panel-title">Reporting</span>
+            </div>
+
+            <div class="post-body">
+                <div class="post-title-el">V.I.P</div>
+                <div class="post-excerpt">
+                    Today's weather in Texas is 82℉ and Cloudy.
+                </div>
+            </div>
+            <div class="post-footer"></div>
+
+        </div>
+    </div>
+
+    <div id="minimizedIcon" style="display: none;" title="Restore Box">👾</div>
+    <script src="../script.js"></script>
+
+    <div class="bottom-box" class="site-footer">
+        <a href="../index.html">Back to Landing Page</a>
+    </div>
+
+
+
 
 
 </body>
 
 </html>
- 

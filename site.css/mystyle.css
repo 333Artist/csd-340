@@ -31,8 +31,7 @@
 html {
   font-family: 'Courier New', monospace;
   font-size: 16px;
-  background: linear-gradient(180deg, var(--nav-top) 50%, var(--nav-bot) 100%);
-  background-size: 80px;
+  background:  var(--nav-top) ;
   color: var(--text-dark); /* Inherited by all child elements unless overridden */
 }
 
