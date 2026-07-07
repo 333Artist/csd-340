@@ -53,7 +53,7 @@ h1 {
 
 footer {
     background-color: black;
-    position: fixed; /* Updated from absolute */
+    position: fixed; 
     bottom: 0;
     left: 0;
     width: 100%;
@@ -63,7 +63,7 @@ footer {
 footer p {
     color: white;
     font-weight: 400;
-    float: left; /* Changed to left-align */
+    float: left; 
     padding-left: 10px;
     font-style: italic;
 }
@@ -71,7 +71,7 @@ footer p {
 footer a {
     color: white;
     font-weight: 400;
-    float: right; /* Changed to left-align */
+    float: right; 
     padding: 10px 10px 10px 10px;
     font-style: italic;
 
@@ -87,7 +87,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Updated to ID selectors (#movies) per requirements */
+
 #movies {
     border-collapse: collapse;
     width: 100%;
