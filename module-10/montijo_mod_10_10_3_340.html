@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="../site.css/assets/1up.gif">
+    <!-- Points to your stylesheet -->
+    <link rel="stylesheet" href="../module-8/montijo_mod8_8_2_assignment.css">  
+
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="a webpage on web development">
+    <meta name="author" content="Maddison Montijo">
+    <meta name="robots" content="nofollow">
+    <meta name="pragma" content="no-cache">
+    <meta name="expires" content="Fri, 02 Jul 2026 23:59:59 GMT">
+
+    <script>
+        function displayImage(imageFile){
+        var largerImage = document.getElementById("mainImage");
+        //gotodoc and create elemenet - an image
+        var newNode = document.createElement("img");
+        newNode.id = "mainImage";
+        newNode.src = imageFile;
+        newNode.alt = "Large Image";
+        newNode.className = "mainImage";
+        newNode.style.width = "300px";
+        newNode.style.height = "200px";
+        largerImage.parentNode.replaceChild(newNode, largerImage);
+        }
+
+    </script>
+
+    </head>
+
+<body>
+    <header>
+        <h1>Assignment 9.3: JavaScript - Part 2</h1>
+    </header>
+
+    <div id="navbar">
+        <a href="../index.html">Home</a>
+        <a href="../index.html">About</a>
+        <a href="../index.html">Contact</a>
+    </div>
+        
+    <!-- Added container wrapper so your CSS margins/padding apply correctly -->
+    <div id="container">
+
+         <div>
+      <a href=#
+         onmouseover="rec.src='monkey.png';"
+         onmouseout= "rec.src='rec.png';"
+      >
+        <img border = 0 name = "rec" src = "rec.png">
+      </a>
+    </div>
+    <br />
+    <div
+         onmouseover="this.style.color='red';"
+         onmouseout= "this.style.color='black';">
+
+      Run your mouse over the image to change.
+      <br />
+
+    </div>
+
+    <div>
+      <a href=#
+         onmouseover="srch.src='alien.png';"
+         onmouseout= "srch.src='search.png';"
+      >
+        <img border = 0 name = "srch" src = "search.png">
+      </a>
+    </div>
+
+    <br />
+    <div
+         onmouseover="this.style.color='red';"
+         onmouseout= "this.style.color='black';">
+
+      Run your mouse over the image to change.
+      <br />
+      Right-click and select View Source for more details.
+
+    </div>
+    
+      <div>
+      <a href=#
+         onclick="lochness.src='loch-ness-monster.png';"
+         ondblclick= "lochness.src='loch-ness.png';"
+      >
+        <img border = 0 name = "lochness" src = "loch-ness.png">
+      </a>
+    </div>
+
+      <div
+         onmouseover="this.style.color='red';"
+         onmouseout= "this.style.color='black';">
+
+      Click once to change.
+      Click twice to change back.
+      <br />
+      Right-click and select View Source for more details.
+
+    </div>
+    
+     
+
+
+    <footer>
+        <p>Copyright @2026 Montijo</p>
+        <a href="../index.html">Back to Landing Page</a> 
+    </footer>
+</body>
+</html>
